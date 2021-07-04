@@ -39,6 +39,14 @@ class Card {
     this.suit = suit;
     this.value = value;
   }
+
+  get color() {
+    return this.suit === "spades" || this.suit === "clubs" ? "black" : "red";
+  }
+
+  getHTML() {
+    const cardDiv = <div></div>;
+  }
 }
 
 function freshDeck() {

@@ -1,4 +1,4 @@
-const suits = ["hearts", "diamonds", "spades", "clubs"];
+const suits = ["♠", "♣", "♥", "♦"];
 const values = [
   "A",
   "2",
@@ -24,6 +24,14 @@ export default class Deck {
     return this.cards.length;
   }
 
+  pop() {
+    return this.cards.shift();
+  }
+
+  push(card) {
+    this.cards.push(card);
+  }
+
   shuffle() {
     for (let i = this.numberOfCards - 1; i > 0; i--) {
       const newIndex = Math.floor(Math.random() * (i + 1));
@@ -41,11 +49,15 @@ class Card {
   }
 
   get color() {
-    return this.suit === "spades" || this.suit === "clubs" ? "black" : "red";
+    return this.suit === "♠" || this.suit === "♣" ? "black" : "red";
   }
 
   getHTML() {
-    const cardDiv = <div></div>;
+    const cardDiv = document.createElement("div");
+    cardDiv.innerText = this.suit;
+    cardDiv.classList.add("card", this.color);
+    cardDiv.dataset.value = `${this.value} ${this.suit}`;
+    return cardDiv;
   }
 }
 

@@ -118,3 +118,28 @@ body {
   width: 100px;
   border-radius: 5px;
 }
+.draw-and-discard {
+  background-color: rgb(226, 226, 123);
+  height: 500px;
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.draw-pile {
+  background-color: white;
+  height: 150px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.discard {
+  background-color: white;
+  height: 150px;
+  width: 100px;
+  border-radius: 5px;
+}

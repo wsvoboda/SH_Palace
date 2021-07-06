@@ -123,6 +123,10 @@ export default function GameBoard() {
                 <div className="player1-card"></div>
                 <div className="player1-card"></div>
             </div>
+            <div className="draw-and-discard">
+                <div className="draw-pile"></div>
+                <div className="discard"></div>
+            </div>
             <div className="player-2-home-cards">
                 <div className="player2-card"></div>
                 <div className="player2-card"></div>

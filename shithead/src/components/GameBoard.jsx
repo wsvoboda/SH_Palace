@@ -119,18 +119,18 @@ export default function GameBoard() {
             <div class="player-deck deck"></div>
             <div class="player-card-slot card-slot"></div>  */}
             <div className="player-1-home-cards">
-                <div className="player1-card"></div>
-                <div className="player1-card"></div>
-                <div className="player1-card"></div>
+                <div className="player1-card">1</div>
+                <div className="player1-card">2</div>
+                <div className="player1-card">3</div>
             </div>
             <div className="draw-and-discard">
-                <div className="draw-pile"></div>
-                <div className="discard"></div>
+                <div className="draw-pile">Draw</div>
+                <div className="discard">Discard</div>
             </div>
             <div className="player-2-home-cards">
-                <div className="player2-card"></div>
-                <div className="player2-card"></div>
-                <div className="player2-card"></div>
+                <div className="player2-card">1</div>
+                <div className="player2-card">2</div>
+                <div className="player2-card">3</div>
             </div>
         </div>
     )

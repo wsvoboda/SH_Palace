@@ -120,7 +120,7 @@ body {
 }
 .draw-and-discard {
   background-color: rgb(226, 226, 123);
-  height: 500px;
+  height: 80%;
   width: 100%;
   position: absolute;
   margin: auto;

@@ -3,8 +3,14 @@ import GameBoard from "./components/GameBoard";
 
 function App() {
   return (
-    <div className="App">
-      <GameBoard cardPosition={[1, 1]} />
+    <div
+      className="App"
+      style={{
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
+      <GameBoard cardPosition={[2, 1]} />
     </div>
   );
 }

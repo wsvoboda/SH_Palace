@@ -1,11 +1,19 @@
 import React from 'react'
 
-export default function CardHolder({children}) {
-    return (
-        <div>
-            <div className="player-1-home-cards">
-                <div className="player1-card">{children}</div>
-            </div>
-        </div>
-    )
+export default function CardHolder({black, children}) {
+    const fill = black ? 'black' : 'white'
+  const stroke = black ? 'white' : 'black'
+
+  return (
+    <div
+      style={{
+        backgroundColor: fill,
+        color: stroke,
+        width: '100%',
+        height: '100%'
+      }}
+    >
+      {children}
+    </div>
+  )
 }

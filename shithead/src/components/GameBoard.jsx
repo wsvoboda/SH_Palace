@@ -1,4 +1,6 @@
 import React, {useEffect} from 'react'
+import Card from "./Card"
+import CardHolder from './CardHolder'
 import { useDrag } from 'react-dnd'
 import Deck from "../deck"
 
@@ -108,29 +110,42 @@ import Deck from "../deck"
 //   return deck.numberOfCards === 0
 // }
 
-export default function GameBoard({ isDragging, text }) {
+function renderCard(i, [cardX, cardY]) {
+    const x = i % 8
+    const y = Math.floor(i / 8)
+    const isCardHere = x === cardX && y === cardY
+    const black = (x + y) % 2 === 1
+    const card = isCardHere ? <Card /> : null
+  
+    return (
+        <div key={i} style={{ width: '12.5%', height: '12.5%' }}>
+          <CardHolder black={black}>{card}</CardHolder>
+        </div>
+      )
+  }
+
+export default function GameBoard({ cardPosition }) {
+    const squares = []
+    for (let i = 0; i < 64; i++) {
+      squares.push(renderCard(i, cardPosition))
+    }
    
     return (
-        <div>
-            {/* <div class="computer-deck deck"></div>
-            <div class="computer-card-slot card-slot"></div>
-            <div class="text"></div>
-            <div class="player-deck deck"></div>
-            <div class="player-card-slot card-slot"></div>  */}
-            <div className="player-1-home-cards">
-                <div className="player1-card">1</div>
-                <div className="player1-card">2</div>
-                <div className="player1-card">3</div>
-            </div>
-            <div className="draw-and-discard">
-                <div className="draw-pile">Draw</div>
-                <div className="discard">Discard</div>
-            </div>
-            <div className="player-2-home-cards">
-                <div className="player2-card">1</div>
-                <div className="player2-card">2</div>
-                <div className="player2-card">3</div>
-            </div>
-        </div>
+        <div
+        style={{
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          flexWrap: 'wrap',
+          border: "1px solid black"
+        }}
+      >
+        {squares}
+      </div>
+    //     <div>
+    //         <CardHolder>
+    //     <Card />
+    //   </CardHolder>
+    //     </div>
     )
 }

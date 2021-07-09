@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import { useDrag } from 'react-dnd'
 import Deck from "../deck"
 
 // const CARD_VALUE_MAP = {
@@ -107,10 +108,8 @@ import Deck from "../deck"
 //   return deck.numberOfCards === 0
 // }
 
-export default function GameBoard() {
-    // useEffect(() => {
-    //     startGame()
-    // }, [])
+export default function GameBoard({ isDragging, text }) {
+   
     return (
         <div>
             {/* <div class="computer-deck deck"></div>

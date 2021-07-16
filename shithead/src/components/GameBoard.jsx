@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import Card from "./Card"
 import CardHolder from './CardHolder'
+import { moveCard } from './Game'
 import { useDrag } from 'react-dnd'
 import Deck from "../deck"
 
@@ -110,15 +111,19 @@ import Deck from "../deck"
 //   return deck.numberOfCards === 0
 // }
 
-function renderCard(i, [cardX, cardY]) {
+function handleCardClick(toX, toY) {
+  moveCard(toX, toY)
+}
+
+function renderCard(i, cardPosition) {
     const x = i % 8
     const y = Math.floor(i / 8)
-    const isCardHere = x === cardX && y === cardY
+    const isCardHere = x === cardPosition[0] && y === cardPosition[1]
     const black = (x + y) % 2 === 1
     const card = isCardHere ? <Card /> : null
   
     return (
-        <div key={i} style={{ width: '12.5%', height: '12.5%' }}>
+        <div onClick={() => handleCardClick(x, y)} key={i} style={{ width: '12.5%', height: '12.5%' }}>
           <CardHolder black={black}>{card}</CardHolder>
         </div>
       )
@@ -142,10 +147,5 @@ export default function GameBoard({ cardPosition }) {
       >
         {squares}
       </div>
-    //     <div>
-    //         <CardHolder>
-    //     <Card />
-    //   </CardHolder>
-    //     </div>
     )
 }

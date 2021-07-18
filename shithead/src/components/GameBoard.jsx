@@ -2,8 +2,10 @@ import React, {useEffect} from 'react'
 import Card from "./Card"
 import CardHolder from './CardHolder'
 import { moveCard } from './Game'
-import { useDrag } from 'react-dnd'
-import Deck from "../deck"
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+// import { useDrag } from 'react-dnd'
+// import Deck from "../deck"
 
 // const CARD_VALUE_MAP = {
 //     "2": 2,
@@ -123,9 +125,11 @@ function renderCard(i, cardPosition) {
     const card = isCardHere ? <Card /> : null
   
     return (
+      <DndProvider backend={HTML5Backend}>
         <div onClick={() => handleCardClick(x, y)} key={i} style={{ width: '12.5%', height: '12.5%' }}>
           <CardHolder black={black}>{card}</CardHolder>
         </div>
+        </DndProvider>
       )
   }
 

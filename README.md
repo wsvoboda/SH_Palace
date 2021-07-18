@@ -1,6 +1,6 @@
 Card game - Palace or "Shithead"
 
-To Do
+### To Do
 
-Convert board from tutorial to shithead board
-Create deck of cards - show on board
+- Convert board from tutorial to shithead board
+- Create deck of cards - show on board and confirm draggability

@@ -15,7 +15,7 @@ function renderCardHolder(i, cardPosition) {
     const y = Math.floor(i / 8)
     return (
       <DndProvider backend={HTML5Backend}>
-      <div key={i} style={{ width: '12.5%', height: '12.5%' }}>
+      <div key={i} style={{ width: '25%', height: '25%' }}>
       <CardPosition x={x} y={y}>
         {renderCard(x, y, cardPosition)}
       </CardPosition>
@@ -26,7 +26,7 @@ function renderCardHolder(i, cardPosition) {
 
 export default function GameBoard({ cardPosition }) {
     const squares = []
-    for (let i = 0; i < 64; i++) {
+    for (let i = 0; i < 4; i++) {
       squares.push(renderCardHolder(i, cardPosition))
     }
    
